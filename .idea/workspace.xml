@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0177979e-1748-49e9-aa25-56d202b794b8" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="769" />
+    <option name="y" value="-24" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectId" id="1VDWbajneT0kKiCgHDX1Kyw0LmO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/navbars" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/Doctor" />
+      <recent name="$PROJECT_DIR$/hce_app" />
+      <recent name="$PROJECT_DIR$/templates/commons" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/navbars" />
+      <recent name="$PROJECT_DIR$/hce_app/views" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="HCE" type="Python.DjangoServer" factoryName="Django server">
+      <module name="HCE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="HCE.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0177979e-1748-49e9-aa25-56d202b794b8" name="Default Changelist" comment="" />
+      <created>1576770458502</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576770458502</updated>
+      <workItem from="1576770462518" duration="3861000" />
+      <workItem from="1576776566422" duration="667000" />
+      <workItem from="1576788219585" duration="8867000" />
+      <workItem from="1576800585285" duration="7565000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="418" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576788432394">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state x="418" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.28.1920.1018@0.28.1920.1018" timestamp="1576788432394" />
+    <state x="693" y="285" width="524" height="520" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576804545806">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state x="693" y="285" width="524" height="520" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.28.1920.1018@0.28.1920.1018" timestamp="1576804545806" />
+    <state x="712" y="404" width="486" height="282" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1576790577687">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state x="712" y="404" width="486" height="282" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.28.1920.1018@0.28.1920.1018" timestamp="1576790577687" />
+    <state width="1872" height="312" key="GridCell.Tab.0.bottom" timestamp="1576810309230">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state width="1872" height="312" key="GridCell.Tab.0.bottom/0.28.1920.1018@0.28.1920.1018" timestamp="1576810309230" />
+    <state width="1872" height="312" key="GridCell.Tab.0.center" timestamp="1576810309230">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state width="1872" height="312" key="GridCell.Tab.0.center/0.28.1920.1018@0.28.1920.1018" timestamp="1576810309230" />
+    <state width="1872" height="312" key="GridCell.Tab.0.left" timestamp="1576810309229">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state width="1872" height="312" key="GridCell.Tab.0.left/0.28.1920.1018@0.28.1920.1018" timestamp="1576810309229" />
+    <state width="1872" height="312" key="GridCell.Tab.0.right" timestamp="1576810309230">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state width="1872" height="312" key="GridCell.Tab.0.right/0.28.1920.1018@0.28.1920.1018" timestamp="1576810309230" />
+    <state width="1872" height="312" key="GridCell.Tab.1.bottom" timestamp="1576810309231">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state width="1872" height="312" key="GridCell.Tab.1.bottom/0.28.1920.1018@0.28.1920.1018" timestamp="1576810309231" />
+    <state width="1872" height="312" key="GridCell.Tab.1.center" timestamp="1576810309231">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state width="1872" height="312" key="GridCell.Tab.1.center/0.28.1920.1018@0.28.1920.1018" timestamp="1576810309231" />
+    <state width="1872" height="312" key="GridCell.Tab.1.left" timestamp="1576810309230">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state width="1872" height="312" key="GridCell.Tab.1.left/0.28.1920.1018@0.28.1920.1018" timestamp="1576810309230" />
+    <state width="1872" height="312" key="GridCell.Tab.1.right" timestamp="1576810309231">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state width="1872" height="312" key="GridCell.Tab.1.right/0.28.1920.1018@0.28.1920.1018" timestamp="1576810309231" />
+    <state x="456" y="172" width="1007" height="746" key="SettingsEditor" timestamp="1576788334268">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state x="456" y="172" width="1007" height="746" key="SettingsEditor/0.28.1920.1018@0.28.1920.1018" timestamp="1576788334268" />
+    <state width="960" height="509" key="XDebugger.FullValuePopup" timestamp="1576794173810">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state width="960" height="509" key="XDebugger.FullValuePopup/0.28.1920.1018@0.28.1920.1018" timestamp="1576794173810" />
+    <state x="609" y="120" width="702" height="834" key="find.popup" timestamp="1576804594887">
+      <screen x="0" y="28" width="1920" height="1018" />
+    </state>
+    <state x="609" y="120" width="702" height="834" key="find.popup/0.28.1920.1018@0.28.1920.1018" timestamp="1576804594887" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hce_app/views/commons.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hce_app/views/commons.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hce_app/views/commons.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hce_app/views/commons.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hce_app/views/commons.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hce_app/views/commons.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
