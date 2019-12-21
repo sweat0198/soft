@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    <main class="page service-page">
+    <div class="photo-gallery">
+        <div class="container">
+            {% include 'messages.html' %}
+            <div class="intro">
+                <h3 class="text-center">Enter Your Analysis Result</h3>
+                <p class="text-center"></p>
+            </div>
+        </div>
+    </div>
+    <h3 class="text-center" style="font-size: 20px;">You can upload .xlsx table or .pdf file</h3>
+        <form method="post" action="{% url 'enter_result' %}" enctype='multipart/form-data'>
+            {% csrf_token %}
+            <div class="form-group"><label style="margin: 18px;font-size: 20px;color: rgb(0,0,0);"><strong>Select Your Analysis Type</strong></label><select class="form-control-lg" style="margin: 30px;" name="analysis"><optgroup label="Select Analysis Type"><option value="blood" selected="">Blood Analysis</option><option value="urine">Urine Analysis</option><option value="others">Others</option></optgroup></select>
+            <input type="file" style="margin: 20px;" name="analysis_file"><button class="btn btn-primary text-justify" type="submit" style="margin: 20px;">Submit</button></div>
+        </form>
+    <div class="form-group"><label style="margin: 20px;">For interviewing with doctor:&nbsp;</label><a href="#"><img src="{% static 'img/doctor_date.jpg' %}" style="height: 60px;"></a></div>
+    <div class="photo-gallery"></div>
+    <div class="container">
+        <div class="intro">
+            <h3 class="text-center"></h3>
+            <p class="text-center"></p>
+        </div>
+    </div>
+    </main>
+{% endblock %}

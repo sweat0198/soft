@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block body %}
+<main class="page landing-page">
+        <section class="clean-block clean-hero" style="background-image: url('{% static 'img/home.jpg'%}');color: rgba(9, 162, 255, 0.85);">
+            <div class="text">
+                <h2 style="height: 60px;">This is only a Helth Care Service &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Just Better</h2><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
+        </section>
+        <section class="clean-block clean-info dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">What is Health Care in Everywhere</h2>
+                    <p>Health Care in Everywhere&nbsp;is a system that enables you to get health care from anywhere without spending time to go to a doctor.</p>
+                </div>
+            </div>
+        </section>
+        <section class="clean-block features">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Features</h2>
+                    <p>Health Care in Everywhere system gives you the following features</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 feature-box"><i class="icon-star icon"></i>
+                        <h4></h4>
+                        <h4>Online Diagnosis Test</h4>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon-pencil icon"></i>
+                        <h4>Enter Test Results</h4>
+                        <p></p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon-star icon"></i>
+                        <h4>Interview with Doctors</h4>
+                        <p></p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon-refresh icon"></i>
+                        <h4>Accasible from Everywhere</h4>
+                        <p></p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon-chemistry icon"></i>
+                        <h4>Show Prescriptions</h4>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clean-block about-us"></section>
+    </main>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<main class="page service-page">
+    <div class="photo-gallery">
+        <div class="container">
+            <div class="intro">
+                <h3 class="text-center" style="margin: 50px;">Please enter patinet ID</h3>
+                <p class="text-center"></p>
+            </div>
+        </div>
+    </div>
+    <div class="form-group"><label style="margin: 20px;">Patient ID:&nbsp;</label><input type="number" style="margin: 20px;"><button class="btn btn-primary" type="button">Show</button></div>
+    <div class="photo-gallery"></div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Patient ID</th>
+                    <th>Patient Name</th>
+                    <th>Prescriptions that patient took</th>
+                    <th>Analysis Results</th>
+                    <th>Medical History of Patient</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>012345678</td>
+                    <td>Serap TORTU</td>
+                    <td>Cell 4</td>
+                    <td>DOCUMENT</td>
+                    <td>Sapa sağlam</td>
+                </tr>
+                <tr></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <div class="intro">
+            <h3 class="text-center"></h3>
+            <p class="text-center"></p>
+        </div>
+    </div>
+    </main>
+{% endblock %}

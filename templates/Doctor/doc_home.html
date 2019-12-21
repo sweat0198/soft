@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <main class="page service-page">
+    <div class="photo-gallery">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">OPTIONS</h2>
+                <p class="text-center"></p>
+            </div>
+            <div class="row photos">
+                <div class="col-sm-6 col-md-4 col-lg-3 item" style="margin: 0px 40px 0px;"><a data-lightbox="photos" href="../User/{% url 'prescriptions' %}"><img class="img-fluid" src="../assets/img/prescription.jpg" style="height: 180px;width: 210px;"></a><strong>Prescriptions</strong></div>
+                <div class="col-sm-6 col-md-4 col-lg-3 item" style="margin: 0px 40px 0px;"><a data-lightbox="photos" href="../assets/img/loft.jpg"><img class="img-fluid" src="../assets/img/medical-records.jpg" style="width: 210px;height: 180px;"></a><strong>Medical History and Analysis Results</strong></div>
+                <div class="col-sm-6 col-md-4 col-lg-3 item"
+                    style="margin: 0px 40px 0px;"><a data-lightbox="photos" href="../assets/img/building.jpg"><img class="img-fluid" src="../assets/img/doctor_date.jpg" style="width: 210px;height: 180px;"></a><strong>Interview with Patients</strong></div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+        </main>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+
+    <main class="page service-page"></main>
+    <div class="photo-gallery">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">OPTIONS</h2>
+                <p class="text-center"></p>
+            </div>
+            <div class="row photos">
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="{% url 'online_test' %}"><img class="img-fluid" src="{% static 'img/Online_test.JPG' %}" style="width: 210px;height: 200px;"></a><a href="{% url 'online_test' %}"><strong>Online Diagnosis Test</strong></a></div>
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="{% url 'prescriptions' %}"><img class="img-fluid" src="{% static 'img/prescription.jpg' %}" style="height: 200px;width: 210px;"></a><a href="{% url 'prescriptions' %}"><strong>Prescriptions</strong></a></div>
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="{% url 'medical_hist' %}"><img class="img-fluid" src="{% static 'img/medical-records.jpg' %}" style="width: 210px;height: 200px;"></a><a href="{% url 'medical_hist' %}"><strong>Medical History</strong></a></div>
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a data-lightbox="photos" href="{% url 'enter_result' %}"><img class="img-fluid" src="{% static 'img/tupler.jpeg' %}" style="height: 200px;width: 219px;"></a><a href="{% url 'enter_result' %}"><strong>Enter Analysis Result</strong></a></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block TITLE %}Home - Brand{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="{% static 'fonts/simple-line-icons.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <link rel="stylesheet" href="{% static 'css/Lightbox-Gallery.css' %}">
+    <link rel="stylesheet" href="{% static 'css/smoothproducts.css' %}">
+</head>
+
+<body>
+    {% if request.user.is_authenticated %}
+        <p>authenticated</p>
+        {% if request.user.authorize == 'normal' %}
+            <p>normal</p>
+            {% include 'navbars/normal.html' %}
+            {% elif request.user.authorize == 'doctor'%}
+            <p>doctor</p>
+            {% include 'navbars/doctors.html' %}
+        {% endif %}
+        {% else %}
+        <p>not authendicated</p>
+        {% include 'navbars/anonymous.html' %}
+    {% endif %}
+
+
+
+
+    {% block body %}
+
+    {% endblock %}
+
+
+    <footer class="page-footer dark">
+        <div class="footer-copyright">
+            <p>© 2018 Copyright Text</p>
+        </div>
+    </footer>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="{% static 'js/smoothproducts.min.js'%}"></script>
+    <script src="{% static 'js/theme.js'%}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+
+    {% block JS %}
+
+    {% endblock %}
+</body>
+
+</html>

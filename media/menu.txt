@@ -1,0 +1,188 @@
+Name	 Ingredients
+massala chicken	250 gram chicken, 3 onion, 2 tomato, 1 lemon, 1 garlic, 10 ml olive oil
+mughai chicken	400 gram chicken, 4 onion, 6 garlic, 1 lemon, 10 cashew, 10 ml chili
+roast beef	500 gram beef, 3 carrot, 3 tomato, 100 ml olive oil, 50 ml mustard, 20 ml chili
+lamb curry	400 gram lamb, 1 onion, 4 tomato, 2 potato, 30 ml olive oil, 100 ml curry
+steamed salmon	400 gram salmon, 200 gram brown rice, 100 gram green bean, 1 lemon, 1 tomato, 100 ml olive oil
+baked fish	600 gram salmon, 2 red paper, 4 onion, 2 garlic, 10 ml vinegar, 50 ml chili
+ceaser salad	N/A
+bbq salad	N/A
+green salad	N/A
+coke	N/A
+fanta	N/A
+water	N/A
+coffe	N/A
+tea	N/A
+
+
+/* @Hatice Köse
+* Student Name: Enes Furkan Örnek
+* Student ID : 150160137
+* Date: <date> */
+
+#include <iostream>
+#include "classes.cpp"
+#include <list>
+#include <fstream>
+#include <sstream>
+//#include <string>
+
+//struct Node{
+//
+//    Item *item;
+//    Node *next;
+//
+//
+//
+//};
+
+//Node *head = NULL;
+
+//void add(Node *node, Node *head){
+//
+//    Node *traverse = NULL;
+//    cout << "Node :" << node->item->getName() << endl;
+//
+//    traverse = head;
+//        while (traverse){
+//        cout << traverse->item->getName()<< " ";
+//        traverse = traverse->next;
+//    }
+//    cout << endl;
+//
+//    traverse = head;
+//    while(traverse->next){
+//        //temp = traverse;
+//        //cout << "a ";
+//        traverse = traverse->next;
+//    }
+//    cout << "before last :" << traverse->item->getName() << endl;
+//    traverse->next = node;
+//    traverse = traverse->next;
+//    cout << "Newnode : " << traverse->item->getName() << endl;
+//
+//    traverse->next = NULL;
+//    //traverse->next = NULL;
+//
+//
+//
+////    traverse = head;
+////    while (traverse){
+////        cout << traverse->item->getName()<< " ";
+////        traverse = traverse->next;
+////    }
+////    cout << endl;
+//}
+
+
+int main() {
+
+    string name;
+    int type, itemCount;
+    double price;
+    //Node *head = NULL;
+
+
+    //list<Item*> Stock;
+
+    //list<Item*>::iterator it;
+    string x = "Enes";
+
+
+    //Item a(x), b(x), c(x);
+    //a.setName(x);
+    Item *item;
+    Type1 one(x, 200, 0.02);
+
+    Type2 two(x, 4, 2);
+
+    Type3 three(x, 200, 0.03);
+
+    item = &one;
+
+
+    ifstream readStock("stock.txt");
+    if(readStock.is_open()){
+        string empty, line;
+        //Node *node = new Node;
+        //node->next = NULL;
+        //Type1 *type1 = NULL;
+        getline(readStock, empty);
+        while(getline(readStock, line)){
+            istringstream ss(line);
+            getline(ss, name, '\t');
+            ss >> type >> itemCount >> price;
+            if(type == 1) {
+                //Type1 *type1 = new Type1(name, itemCount, price);
+                //node->item = new Type1(name, itemCount, price);
+
+//                if(!head){
+//                    head = new Node;
+//                    head->item = new Type1(name, itemCount, price);
+//                    head->next = NULL;
+//                }else {
+//                    //Stock.push_back(&type1);
+//                    //cout << node->item->getName() << " " << head->item->getName() << endl;
+//                    add(node, head);
+//                }
+            }else if (type == 2) {
+                //Type2 type2(name, itemCount, int(price));
+                //Stock.push_back(&type2);
+                //node = new Node;
+//                node->item = &type2;
+//                if(!head){
+//                    head = new Node;
+//                    head->item = &type2;
+//                    head->next = NULL;
+//                }else {
+//                    //Stock.push_back(&type1);
+//                    add(node, head);
+//                }
+            }else if (type == 3) {
+//                Type3 type3(name, itemCount, price);
+//                //Stock.push_back(&type3);
+//                //node = new Node;
+//                node->item = &type3;
+//                if(!head){
+//                    head = new Node;
+//                    head->item = &type3;
+//                    head->next = NULL;
+//                }else {
+//                    //Stock.push_back(&type1);
+//                    add(node, head);
+//                }
+            }
+            //cout << node->item->getName() << endl;
+
+            //cout << Stock.back()->getName();
+
+            //cout << name << " " << type << " " <<  itemCount << " " <<  price << endl;
+            //delete type2;
+
+        }
+
+
+//        Node *traverse = head;
+//        int i = 1;
+//
+//        cout << traverse->item->getName() << endl;
+//        while(traverse){
+//            cout << i << ": " <<(traverse)->item->getName() << endl;
+//            traverse = traverse->next;
+//
+//        }
+////        for(traverse ; traverse != NULL; traverse = traverse->next ){
+////            cout << i << ": " <<(traverse)->item->getName() << endl;
+////            i++;
+////        }
+
+
+
+
+
+
+    }
+
+
+    return 0;
+}

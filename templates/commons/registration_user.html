@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <main class="page registration-page">
+        <section class="clean-block clean-form dark">
+            <div class="container">
+                {% include 'messages.html' %}
+                <div class="block-heading">
+                    <h2 class="text-info">Registration for Users</h2>
+                </div>
+                <form method="post" action="{% url 'register_user' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group"><label >Name</label><input class="form-control item" name="username" type="text" id="name" required></div>
+                    <div class="form-group"><label >ID Number</label><input class="form-control item" name="id_number" type="text" id="name" required></div>
+                    <div class="form-group"><label >Gender</label>
+                        <select id="gender_select" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female" selected>Female</option>
+                    </select>
+                        </div>
+                    <div class="form-group"><label >Birth Date</label><input class="form-control" name="birth_date" type="date" required></div>
+                    <div class="form-group"><label >Password</label><input class="form-control item" name="password" type="password" id="password" required></div>
+                    <div class="form-group"><label >Email</label><input class="form-control item" name="email" type="email" id="email" required></div>
+                    <div class="form-group"><label >Email</label><select id="authorize_select" name="authorize">
+                        <option value="normal">Normal User</option>
+                        <option value="doctor" selected>Doctor</option>
+                    </select></div>
+                    <div class="form-group" id="file_div"><label for="email">Please Upload Your License</label><input type="file" name="file"></div>
+                    <div class="form-group"><label >Medical History(Please enter your previous illnesses, allergy, chronic diseases in your family)</label><input class="form-control form-control-lg" name="sickness" type="text" required></div>
+                    <button class="btn btn-primary btn-block" type="submit">Sign Up</button></form>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block JS %}
+<script>
+$(document).ready(function () {
+    $('#authorize_select').change(function () {
+        $('#file_div').toggle();
+
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<main class="page service-page">
+    <div class="photo-gallery">
+        <div class="container">
+        <section class="clean-block clean-form">
+            {% include 'messages.html' %}
+                <div class="block-heading">
+                    <h2 class="text-info">Give Prescription</h2>
+                </div>
+                <form method="post" action="{% url 'prescrips' %}">
+                    {% csrf_token %}
+                    <div class="form-group"><label for="user_select">User: </label>
+                        <select id="user_select" name="user">
+                            {% for user in users %}
+                                <option value="{{ user.id }}">{{ user.username }} {{ user.id_number }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div id="cures">
+                        <div class="form-group" id="cure0">
+                            <label for="cure_name">1. Cure Name:</label>
+                            <input class="form-control" type="text" id="cure_name1" name="cure_name1">
+
+                            <label for="cure_amount">1. Cure Amount:</label>
+                            <input class="form-control" type="number" id="cure_amount1" name="cure_amount1">
+                        </div>
+                    </div>
+
+                    <button class="btn btn-success btn-block" id="add_cure" type="button">Add Cure</button>
+                    <button class="btn btn-danger btn-block" id="remove_cure" type="button">Remove Cure</button>
+
+                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                </form>
+        </section>
+
+            <div class="intro">
+                <h3 class="text-center" style="margin: 50px;">Prescriptions that you gave&nbsp;</h3>
+                <p class="text-center"></p>
+            </div>
+        </div>
+    </div>
+    <div class="photo-gallery"></div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Patient ID</th>
+                    <th>Patient Name</th>
+                    <th>Prescriptions that you gave</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>012345678</td>
+                    <td>Serap TORTU</td>
+                    <td>Cell 4</td>
+                    <td>08/04/2018</td>
+                </tr>
+                <tr></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <div class="intro">
+            <h3 class="text-center"></h3>
+            <p class="text-center"></p>
+        </div>
+    </div>
+    </main>
+{% endblock %}
+
+{% block JS %}
+<script>
+$(document).ready(function () {
+
+    let cure_number = 1;
+
+
+
+
+
+    $('#add_cure').click(function () {
+        let cures_html = "";
+        let cure_iter = 1;
+        if (cure_number<5) cure_number++;
+        while(cure_iter<=cure_number){
+            cures_html += `<div class="form-group" id="cure${cure_iter}">
+                            <label for="cure_name">${cure_iter}. Cure Name:</label>
+                            <input class="form-control" type="text" id="cure_name${cure_iter}" name="cure_name${cure_iter}">
+
+                            <label for="cure_amount">${cure_iter}. Cure Amount:</label>
+                            <input class="form-control" type="number" id="cure_amount${cure_iter}" name="cure_amount${cure_iter}">
+                        </div>`;
+            cure_iter++;
+
+        }
+        $('#cures').html(cures_html);
+    });
+
+    $('#remove_cure').click(function () {
+        let cures_html = "";
+        let cure_iter = 1;
+        if (cure_number>1) cure_number--;
+
+        while(cure_iter<=cure_number){
+            cures_html += `<div class="form-group" id="cure${cure_iter}">
+                            <label for="cure_name">${cure_iter}. Cure Name:</label>
+                            <input class="form-control" type="text" id="cure_name${cure_iter}" name="cure_name${cure_iter}">
+
+                            <label for="cure_amount">${cure_iter}. Cure Amount:</label>
+                            <input class="form-control" type="number" id="cure_amount${cure_iter}" name="cure_amount${cure_iter}">
+                        </div>`;
+            cure_iter++;
+
+        }
+        $('#cures').html(cures_html);
+    });
+
+})
+</script>
+{% endblock %}
