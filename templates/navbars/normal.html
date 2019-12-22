@@ -10,7 +10,9 @@
                     <li class="nav-item" role="presentation"><a class="nav-link {% if request.path == '/enter_result/' %}active{% endif %}" href="{% url 'enter_result' %}">Results</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'prescriptions' %}">PrescriptıonS</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'online_test' %}">Diagnosıs test</a></li>
+                    {% if request.user.is_authenticated %}
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    {% endif %}
                 </ul>
         </div>
         </div>

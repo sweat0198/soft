@@ -9,7 +9,10 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'med_result' %}">Results</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'prescrips' %}">PrescriptıonS</a></li>
+                {% if request.user.is_authenticated %}
                 <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                {% endif %}
+
 
             </ul>
     </div>

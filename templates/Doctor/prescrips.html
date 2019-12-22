@@ -11,8 +11,10 @@
                 </div>
                 <form method="post" action="{% url 'prescrips' %}">
                     {% csrf_token %}
+                    <input type="hidden" id="cure_number" name="cure_number" value="1">
+
                     <div class="form-group"><label for="user_select">User: </label>
-                        <select id="user_select" name="user">
+                        <select id="user_select" name="user_id">
                             {% for user in users %}
                                 <option value="{{ user.id }}">{{ user.username }} {{ user.id_number }}</option>
                             {% endfor %}
@@ -21,10 +23,10 @@
                     <div id="cures">
                         <div class="form-group" id="cure0">
                             <label for="cure_name">1. Cure Name:</label>
-                            <input class="form-control" type="text" id="cure_name1" name="cure_name1">
+                            <input class="form-control" type="text" id="cure_name1" name="cure_name1" required>
 
                             <label for="cure_amount">1. Cure Amount:</label>
-                            <input class="form-control" type="number" id="cure_amount1" name="cure_amount1">
+                            <input class="form-control" type="number" id="cure_amount1" name="cure_amount1" required>
                         </div>
                     </div>
 
@@ -78,10 +80,6 @@ $(document).ready(function () {
 
     let cure_number = 1;
 
-
-
-
-
     $('#add_cure').click(function () {
         let cures_html = "";
         let cure_iter = 1;
@@ -89,15 +87,16 @@ $(document).ready(function () {
         while(cure_iter<=cure_number){
             cures_html += `<div class="form-group" id="cure${cure_iter}">
                             <label for="cure_name">${cure_iter}. Cure Name:</label>
-                            <input class="form-control" type="text" id="cure_name${cure_iter}" name="cure_name${cure_iter}">
+                            <input class="form-control" type="text" id="cure_name${cure_iter}" name="cure_name${cure_iter}" required>
 
                             <label for="cure_amount">${cure_iter}. Cure Amount:</label>
-                            <input class="form-control" type="number" id="cure_amount${cure_iter}" name="cure_amount${cure_iter}">
+                            <input class="form-control" type="number" id="cure_amount${cure_iter}" name="cure_amount${cure_iter}" required>
                         </div>`;
             cure_iter++;
 
         }
         $('#cures').html(cures_html);
+        $('#cure_number').val(cure_number);
     });
 
     $('#remove_cure').click(function () {
@@ -108,15 +107,16 @@ $(document).ready(function () {
         while(cure_iter<=cure_number){
             cures_html += `<div class="form-group" id="cure${cure_iter}">
                             <label for="cure_name">${cure_iter}. Cure Name:</label>
-                            <input class="form-control" type="text" id="cure_name${cure_iter}" name="cure_name${cure_iter}">
+                            <input class="form-control" type="text" id="cure_name${cure_iter}" name="cure_name${cure_iter}" required>
 
                             <label for="cure_amount">${cure_iter}. Cure Amount:</label>
-                            <input class="form-control" type="number" id="cure_amount${cure_iter}" name="cure_amount${cure_iter}">
+                            <input class="form-control" type="number" id="cure_amount${cure_iter}" name="cure_amount${cure_iter}" required>
                         </div>`;
             cure_iter++;
 
         }
         $('#cures').html(cures_html);
+        $('#cure_number').val(cure_number);
     });
 
 })

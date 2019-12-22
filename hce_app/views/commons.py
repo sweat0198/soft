@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 from hce_app.models import *
-from HCE.decorators import allowed_to
+from hce_app.decorators import allowed_to
 from hce_app.forms import *
 
 
