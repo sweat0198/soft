@@ -25,7 +25,7 @@ def enter_result(request):
             messages.success(request, message="Successfully added.", extra_tags='success')
         else:
             messages.error(request, message=form.errors, extra_tags='danger')
-        return  redirect('enter_result')
+        return redirect('enter_result')
     return render(request, 'Normal/enter_result.html')
 
 
@@ -41,7 +41,9 @@ def medical_hist(request):
 
 
 def prescriptions(request):
-    return render(request, 'Normal/prescriptions.html')
+    prescriptions = request.user.taken_prescriptions.all()
+
+    return render(request, 'Normal/prescriptions.html', context={'prescriptions': prescriptions})
 
 
 def user_interview(request):
@@ -50,3 +52,7 @@ def user_interview(request):
 
 def test_over(request):
     return render(request, 'Normal/test_over.html')
+
+
+def online_test(request):
+    return render(request, 'Normal/online_test.html')

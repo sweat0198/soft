@@ -55,12 +55,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>012345678</td>
-                    <td>Serap TORTU</td>
-                    <td>Cell 4</td>
-                    <td>08/04/2018</td>
-                </tr>
+                {% for prescription in prescriptions %}
+                    <tr>
+                        <td>{{ prescription.user.id_number }}</td>
+                        <td>{{ prescription.user.username }}</td>
+                        <td>{% for cure in prescription.cures.all %}{{ cure.name }}: {{ cure.daily_consume }}{% if not forloop.last %},{% endif %} {% endfor %}</td>
+                        <td>{{ prescription.created_date }}</td>
+                    </tr>
+                {% endfor %}
+
                 <tr></tr>
             </tbody>
         </table>

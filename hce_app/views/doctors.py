@@ -22,7 +22,7 @@ def prescrips(request):
         cure_number = request.POST['cure_number']
         user_id = request.POST['user_id']
         user = CustomUser.objects.get(id=user_id)
-        prescription = Prescription.objects.create(user=user)
+        prescription = Prescription.objects.create(user=user, doctor=request.user.doctor)
         prescription.save()
         for i in range(int(cure_number)):
             cure_name = request.POST['cure_name%s' % (i + 1)]
@@ -33,4 +33,6 @@ def prescrips(request):
         return redirect('prescrips')
 
     users = CustomUser.objects.filter(authorize='normal', is_superuser=False)
-    return render(request, 'Doctor/prescrips.html', context={'users': users})
+    prescriptions = request.user.doctor.given_prescriptions.all()
+
+    return render(request, 'Doctor/prescrips.html', context={'users': users, 'prescriptions': prescriptions})

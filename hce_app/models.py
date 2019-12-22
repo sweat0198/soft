@@ -9,13 +9,18 @@ class CustomUser(AbstractUser):
     birth_date = models.DateTimeField(null=True)
     sickness = models.CharField(max_length=255, null=True)
 
+    last_name = ""
+
     @property
     def spam_true(self):
         return self.is_active
 
+    def __str__(self):
+        return "{}: {}".format(self.authorize, self.username)
+
 
 class Doctor(models.Model):
-    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name='doctor_user')
+    user = models.OneToOneField('CustomUser', on_delete=models.CASCADE, related_name='doctor')
     total_vote = models.IntegerField(default=0)
     vote_number = models.IntegerField(default=0)
     licence_file = models.FileField(upload_to='upload/', null=True)
@@ -29,7 +34,7 @@ class Doctor(models.Model):
 
 
 class TestResult(models.Model):
-    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name='test_owner')
+    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name='test_results')
     sickness = models.CharField(max_length=255)
     accuracy = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
@@ -40,18 +45,19 @@ class TestResult(models.Model):
 
 
 class AnalysisResult(models.Model):
-    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name='analysis_owner')
+    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name='analysis_results')
     report = models.FileField()
     report_name = models.CharField(max_length=255)
     created_date = models.DateTimeField(auto_now_add=True)
 
 
 class Prescription(models.Model):
-    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name='prescription_owner')
+    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name='taken_prescriptions')
+    doctor = models.ForeignKey('Doctor', on_delete=models.CASCADE, related_name='given_prescriptions')
     created_date = models.DateTimeField(auto_now_add=True)
 
 
 class Cure(models.Model):
     name = models.CharField(max_length=255)
     daily_consume = models.IntegerField(default=0)
-    prescription = models.ForeignKey('Prescription', on_delete=models.CASCADE, related_name='prescription')
+    prescription = models.ForeignKey('Prescription', on_delete=models.CASCADE, related_name='cures')

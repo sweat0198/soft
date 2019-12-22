@@ -38,6 +38,7 @@ urlpatterns = [
     path('prescriptions/', normals.prescriptions, name='prescriptions'),
     path('test_over/', normals.test_over, name='test_over'),
     path('user_interview/', normals.user_interview, name='user_interview'),
+    path('online_test/', normals.online_test, name='online_test'),
 
     # doctors
     path('doc_home/', doctors.doc_home, name='doc_home'),

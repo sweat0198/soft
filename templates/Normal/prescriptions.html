@@ -15,19 +15,19 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th style="width: 300px;">Prescription Date &amp; Explanation</th>
-                    <th>Prescription Contents</th>
+                    <th>Doctor Name</th>
+                    <th>Prescription Date</th>
+                    <th>Cures</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Cell 1</td>
-                    <td>Tam buğday unu, yumurta, kuzu eti</td>
-                </tr>
-                <tr>
-                    <td>Cell 3</td>
-                    <td>Cell 4</td>
-                </tr>
+                {% for prescription in prescriptions %}
+                    <tr>
+                        <td>{{ prescription.doctor.user.username }}</td>
+                        <td>{{ prescription.created_date }}</td>
+                        <td>{% for cure in prescription.cures.all %}{{ cure.name }}: {{ cure.daily_consume }}{% if not forloop.last %},{% endif %} {% endfor %}</td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
