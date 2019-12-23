@@ -2,4 +2,4 @@
 venv/
 db.sqlite3
 __pycache__/
-hce_app/migrations/
+hce_app/migrations/*00
