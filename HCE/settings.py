@@ -24,7 +24,7 @@ SECRET_KEY = 'b$m9v-#l@atye4=4qw$t7^-&5&dva@(^mm0y6**%-ch&r%8l%0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['health-care-in-everywhere.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
@@ -127,9 +127,15 @@ LOGOUT_REDIRECT_URL = 'index'
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/assets/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "assets"),
 ]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+HOME_PATH = os.path.expanduser("~").lower()  # home url of pc
+if 'app' in HOME_PATH:  # Heroku
+    import django_heroku
+    django_heroku.settings(locals())
