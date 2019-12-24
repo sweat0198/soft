@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <main class="page service-page"></main>
+    <div class="photo-gallery">
+        <div class="container">
+            <div class="intro">
+                <h3 class="text-center" style="margin: 50px;">Choose The Choice That Suits You</h3>
+                <p class="text-center"></p>
+            </div>
+        </div>
+    </div>
+    <div class="photo-gallery"></div>
+    <div class="table-responsive">
+        <form action="{% url 'online_test' %}">
+        <div class="ache">
+        <p>Have you got any ache ?</p>
+            <label><input type="radio" name="head" value="head"> Head<br></label>
+            <label><input type="radio" name="arm" value="arm"> Arm<br></label>
+            <label><input type="radio" name="body" value="body"> Body<br></label>
+            <label><input type="radio" name="leg" value="leg"> Leg<br></label>
+            <label><input type="radio" name="throat" value="throat"> Throat<br></label>
+            <label><input type="radio" name="stomach_ache" value="stomach_ache"> Stomach<br></label>
+            <label><input type="radio" name="no" value="no"> No<br></label>
+            <label><input type="reset" value="Reset"><br></label>
+        </div>
+
+        <div class="pain">
+        <p>Have you got any pain ?</p>
+            <label><input type="radio" name="stomach_pain" value="stomach_pain"> Stomach<br></label>
+            <label><input type="radio" name="hearth" value="hearth"> Hearth<br></label>
+            <label><input type="radio" name="liver" value="liver"> Liver<br></label>
+            <label><input type="radio" name="no" value="no"> No<br></label>
+        <label><input type="reset" value="Reset"><br></label>
+        </div>
+
+        <div class="erythema">
+        <p>Have you got any erythema ?</p>
+            <label><input type="radio" name="hand" value="hand"> Hand<br></label>
+            <label><input type="radio" name="leg" value="leg"> Leg<br></label>
+            <label><input type="radio" name="body" value="body"> Body<br></label>
+            <label><input type="radio" name="foot" value="foot"> Foot<br></label>
+            <label><input type="radio" name="knee" value="knee"> Knee<br></label>
+            <label><input type="radio" name="no" value="no"> No<br></label>
+        <label><input type="reset" value="Reset"><br></label>
+         </div>
+
+        <div class="inflamed">
+        <p>Do you have any inflamed discharge ?</p>
+            <label><input type="radio" name="ear" value="ear"> Ear<br></label>
+            <label><input type="radio" name="leg" value="leg"> Leg<br></label>
+            <label><input type="radio" name="body" value="body"> Body<br></label>
+            <label><input type="radio" name="arm" value="arm"> Arm<br></label>
+            <label><input type="radio" name="genital" value="genital"> Genital<br></label>
+            <label><input type="radio" name="nose" value="nose"> Nose<br></label>
+            <label><input type="radio" name="no" value="no"> No<br></label>
+        <label><input type="reset" value="Reset"><br></label>
+         </div>
+
+        <div class="nausea">
+        <p>Do you have nausea ?</p>
+            <label><input type="radio" name="nausea" value="yes"> Yes<br></label>
+            <label><input type="radio" name="nausea" value="no"> No<br></label>
+        </div>
+
+        <div class="hair_lose">
+        <p>Do you have hair lose ?</p>
+            <label><input type="radio" name="hair_lose" value="yes"> Yes<br></label>
+            <label><input type="radio" name="hair_lose" value="no"> No<br></label>
+        </div>
+
+        <div class="appetite">
+        <p>Do you have appetite ?</p>
+            <label><input type="radio" name="appetite" value="yes"> Yes<br></label>
+            <label><input type="radio" name="appetite" value="no"> No<br></label>
+        </div>
+
+        <div class="weakness">
+        <p>Is there any weakness ?</p>
+            <label><input type="radio" name="weakness" value="yes"> Yes<br></label>
+            <label><input type="radio" name="weakness" value="no"> No<br></label>
+        </div>
+
+        <div class="insomnia">
+        <p>Do you have insomnia ?</p>
+            <label><input type="radio" name="insomnia" value="yes"> Yes<br></label>
+            <label><input type="radio" name="insomnia" value="no"> No<br></label>
+        </div>
+
+        <div class="nosebleed">
+        <p>Do you have nosebleed ?</p>
+            <label><input type="radio" name="nosebleed" value="yes"> Yes<br></label>
+            <label><input type="radio" name="nosebleed" value="no"> No<br></label>
+        </div>
+
+        <div class="dizziness">
+        <p>Do you have dizziness ?</p>
+            <label><input type="radio" name="dizziness" value="yes"> Yes<br></label>
+            <label><input type="radio" name="dizziness" value="no"> No<br></label>
+        </div>
+
+        <div class="fever">
+        <p>Do you have fever ?</p>
+            <label><input type="radio" name="fever" value="yes"> Yes<br></label>
+            <label><input type="radio" name="fever" value="no"> No<br></label>
+        </div>
+
+        <div class="other">
+        <p>Other symptoms?</p>
+            <label><input type="radio" name="sneeze" value="sneeze"> Sneeze<br></label>
+            <label><input type="radio" name="cough" value="cough"> Cough<br></label>
+            <label><input type="radio" name="tear" value="tear"> Tear<br></label>
+            <label><input type="radio" name="runny_nose" value="runny_nose"> Runny nose<br></label>
+            <label><input type="radio" name="swelter" value="swelter"> Swelter<br></label>
+            <label><input type="radio" name="fluid_loss" value="fluid_loss"> Fluid loss<br></label>
+        <label><input type="reset" value="Reset"><br></label>
+        </div>
+
+        </form>
+            <label><input type="submit" value="Submit"></label>
+
+    </div>
+    <div class="container">
+        <div class="intro">
+            <h3 class="text-center"></h3>
+            <p class="text-center"></p>
+        </div>
+    </div>
+
+{% endblock %}
