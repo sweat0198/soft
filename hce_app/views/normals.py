@@ -8,10 +8,12 @@ from hce_app.models import *
 from hce_app.decorators import allowed_to
 
 
+@allowed_to(auths=['normal', ])
 def home(request):
     return render(request, 'Normal/home.html')
 
 
+@allowed_to(auths=['normal', ])
 def enter_result(request):
     if request.method == 'POST':
         form = EnterAnalysisResultForm(request.POST, request.FILES)
@@ -29,6 +31,7 @@ def enter_result(request):
     return render(request, 'Normal/enter_result.html')
 
 
+@allowed_to(auths=['normal', ])
 def medical_hist(request):
     if request.method == 'POST':
         medical_history = request.POST['medical_history']
@@ -40,19 +43,23 @@ def medical_hist(request):
     return render(request, 'Normal/medical_hist.html')
 
 
+@allowed_to(auths=['normal', ])
 def prescriptions(request):
     prescriptions = request.user.taken_prescriptions.all()
 
     return render(request, 'Normal/prescriptions.html', context={'prescriptions': prescriptions})
 
 
+@allowed_to(auths=['normal', ])
 def user_interview(request):
     return render(request, 'Normal/user_interview.html')
 
 
+@allowed_to(auths=['normal', ])
 def test_over(request):
     return render(request, 'Normal/test_over.html')
 
 
+@allowed_to(auths=['normal', ])
 def online_test(request):
     return render(request, 'Normal/online_test.html')

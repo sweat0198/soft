@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import user_passes_test
 
 def allowed_to(function=None, redirect_field_name=REDIRECT_FIELD_NAME, login_url='login', auths:list = None):
     '''
-    Decorator for views that checks that the logged in user is a university,
+    Decorator for views that checks that the logged in user is in auths,
     redirects to the log-in page if necessary.
     '''
     actual_decorator = user_passes_test(

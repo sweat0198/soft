@@ -5,18 +5,22 @@ from django.contrib import messages
 from hce_app.models import CustomUser, Cure, Prescription
 
 
+@allowed_to(auths=['doctor', ])
 def doc_home(request):
     return render(request, 'Doctor/doc_home.html')
 
 
+@allowed_to(auths=['doctor', ])
 def doctor_interview(request):
     return render(request, 'Doctor/doctor_interview.html')
 
 
+@allowed_to(auths=['doctor', ])
 def med_result(request):
     return render(request, 'Doctor/med_result.html')
 
 
+@allowed_to(auths=['doctor', ])
 def prescrips(request):
     if request.method == 'POST':
         cure_number = request.POST['cure_number']

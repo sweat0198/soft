@@ -18,16 +18,12 @@
 
 <body>
     {% if request.user.is_authenticated %}
-        <p>authenticated</p>
         {% if request.user.authorize == 'normal' %}
-            <p>normal</p>
             {% include 'navbars/normal.html' %}
             {% elif request.user.authorize == 'doctor'%}
-            <p>doctor</p>
             {% include 'navbars/doctors.html' %}
         {% endif %}
         {% else %}
-        <p>not authendicated</p>
         {% include 'navbars/anonymous.html' %}
     {% endif %}
 

@@ -35,7 +35,10 @@ def login_page(request):
         else:
             messages.warning(request, "Username or password is not filled decently")
             print("Username or password is not filled decently")
-    return render(request, 'commons/login.html')
+    if request.method == 'GET':
+        if request.user.is_authenticated:
+            return redirect('index')
+        return render(request, 'commons/login.html')
 
 
 def register_user(request):
