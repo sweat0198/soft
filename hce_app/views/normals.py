@@ -62,4 +62,67 @@ def test_over(request):
 
 @allowed_to(auths=['normal', ])
 def online_test(request):
-    return render(request, 'Normal/online_test.html')
+    if request.method == 'POST':
+        ache = request.POST['ache']
+        pain = request.POST['pain']
+        erythema = request.POST['erythema']
+        inflamed = request.POST['inflamed']
+        nausea = request.POST['nausea']
+        hair_lose = request.POST['hair_lose']
+        appetite = request.POST['appetite']
+        weakness = request.POST['weakness']
+        insomnia = request.POST['insomnia']
+        nosebleed = request.POST['nosebleed']
+        dizziness = request.POST['dizziness']
+        fever = request.POST['fever']
+        other = request.POST['other']
+
+        diseases = {'Sniffle': 0, 'Sinusitis': 0, 'diarrhea': 0, 'Fungal Inflammation': 0, 'Anemia': 0}
+
+        diseases['Sniffle'] += 0.1 if ache == 'head' else 0
+        diseases['Sniffle'] += 0.05 if fever == 'yes' else 0
+        diseases['Sniffle'] += 0.1 if ache == 'throat' else 0
+        diseases['Sniffle'] += 0.1 if weakness == 'yes' else 0
+        diseases['Sniffle'] += 0.05 if insomnia == 'yes' else 0
+        diseases['Sniffle'] += 0.1 if other == 'cough' else 0
+        diseases['Sniffle'] += 0.1 if other == 'tear' else 0
+        diseases['Sniffle'] += 0.1 if other == 'sneeze' else 0
+        diseases['Sniffle'] += 0.1 if other == 'runny_nose' else 0
+
+        diseases['Sinusitis'] += 0.15 if ache == 'head' else 0
+        diseases['Sinusitis'] += 0.1 if weakness == 'yes' else 0
+        diseases['Sinusitis'] += 0.1 if other == 'cough' else 0
+        diseases['Sinusitis'] += 0.15 if other == 'runny_nose' else 0
+        diseases['Sinusitis'] += 0.15 if nausea == 'yes' else 0
+        diseases['Sinusitis'] += 0.1 if dizziness == 'yes' else 0
+
+        diseases['diarrhea'] += 0.1 if ache == 'stomach_ache' else 0
+        diseases['diarrhea'] += 0.15 if pain == 'stomach_pain' else 0
+        diseases['diarrhea'] += 0.15 if nausea == 'yes' else 0
+        diseases['diarrhea'] += 0.15 if fever == 'yes' else 0
+        diseases['diarrhea'] += 0.1 if weakness == 'yes' else 0
+        diseases['diarrhea'] += 0.1 if other == 'fluid_loss' else 0
+
+        diseases['Fungal Inflammation'] += 0.6 if ache == 'no' else 0
+        diseases['Fungal Inflammation'] += 0.15 if weakness == 'yes' else 0
+        diseases['Fungal Inflammation'] += 0.1 if hair_lose == 'yes' else 0
+        diseases['Fungal Inflammation'] += 0.1 if fever == 'yes' else 0
+        diseases['Fungal Inflammation'] += 0.05 if insomnia == 'yes' else 0
+
+        diseases['Anemia'] += 0.2 if hair_lose == 'yes' else 0
+        diseases['Anemia'] += 0.3 if weakness == 'yes' else 0
+        diseases['Anemia'] += 0.15 if dizziness == 'yes' else 0
+        diseases['Anemia'] += 0.1 if ache == 'head' else 0
+
+        print(diseases)
+        sorted_diseases_as_list = [k for k, v in sorted(diseases.items(), key= lambda item: item[1])]
+        print(sorted_diseases_as_list)
+        max_probable_disease = sorted_diseases_as_list[-1]
+        max_probable_disease_ratio = diseases[max_probable_disease]
+
+        if max_probable_disease_ratio >= 0.6:
+            messages.success(request, message="You have %{} {}.".format(max_probable_disease_ratio*100,max_probable_disease), extra_tags='success')
+        else:
+            messages.error(request, message="Your sickness not determined.", extra_tags='danger')
+
+    return render(request, 'Normal/online_test2.html')
