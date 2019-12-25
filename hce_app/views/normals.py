@@ -103,7 +103,7 @@ def online_test(request):
         diseases['diarrhea'] += 0.1 if weakness == 'yes' else 0
         diseases['diarrhea'] += 0.1 if other == 'fluid_loss' else 0
 
-        diseases['Fungal Inflammation'] += 0.6 if ache == 'no' else 0
+        diseases['Fungal Inflammation'] += 0.6 if ache != 'no' else 0
         diseases['Fungal Inflammation'] += 0.15 if weakness == 'yes' else 0
         diseases['Fungal Inflammation'] += 0.1 if hair_lose == 'yes' else 0
         diseases['Fungal Inflammation'] += 0.1 if fever == 'yes' else 0
@@ -122,7 +122,9 @@ def online_test(request):
 
         if max_probable_disease_ratio >= 0.6:
             messages.success(request, message="You have %{} {}.".format(max_probable_disease_ratio*100,max_probable_disease), extra_tags='success')
+        elif max_probable_disease_ratio == 0:
+            messages.error(request, message="You should select some symptoms in order for the system to determine a sickness, OBVIOUSLY.", extra_tags='danger')
         else:
-            messages.error(request, message="Your sickness not determined.", extra_tags='danger')
+            messages.error(request, message="Your sickness is not determined.", extra_tags='danger')
 
     return render(request, 'Normal/online_test2.html')
